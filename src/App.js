@@ -34,15 +34,15 @@ function App() {
         onChange={e => setSearchTerm(e.target.value)}
       />
       <h1>cao cao</h1>
-      {users.results.filter(filterNames).map(user => {
+      {searchTerm.length !==0 ? users.results.filter(filterNames).map(user => {
         return (
           <div>
             <h1>
-              {user.name} {user.last_name}
+              {user.name}
             </h1>
           </div>
         );
-      })}
+      }) : ''}
     </div>
   );
 }
